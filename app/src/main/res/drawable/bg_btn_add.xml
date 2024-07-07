@@ -7,7 +7,7 @@
     </item>
     <item android:id="@android:id/background">
         <shape android:shape="oval">
-            <solid android:color="#3893C6"/>
+            <solid android:color="@color/main_blue"/>
         </shape>
     </item>
 </ripple>

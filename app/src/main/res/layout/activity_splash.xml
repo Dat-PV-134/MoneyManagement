@@ -15,12 +15,14 @@
 <!--        android:src="@drawable/bg_splash_nodpi" />-->
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="@dimen/_150sdp"
-        android:layout_height="@dimen/_150sdp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_fileName="json/splash.json"
+        app:lottie_fileName="json/splash_anim.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:lottie_speed="1.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

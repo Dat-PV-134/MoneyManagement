@@ -1,27 +1,43 @@
 package com.rekoj134.moneymanagement.presentation.home
 
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.rekoj134.moneymanagement.R
+import com.rekoj134.moneymanagement.databinding.ActivityMainBinding
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
+
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupView()
+        initData()
+        handleEvent()
+    }
 
-        findViewById<ImageView>(R.id.btnCategory).setOnClickListener {
+    private fun handleEvent() {
 
-        }
+    }
 
-        findViewById<ImageView>(R.id.btnChart).setOnClickListener {
+    private fun initData() {
 
-        }
+    }
 
+    private fun setupView() {
+        binding.tvTitleTop.text = getTopTitle()
+    }
 
-        findViewById<ImageView>(R.id.btnAdd).setOnClickListener {
-
-        }
+    private fun getTopTitle() : String {
+        val curDate: Date = Calendar.getInstance().time
+        val dateFormatter= SimpleDateFormat("yyyy-MM", Locale.getDefault())
+        val formattedDate = dateFormatter.format(curDate)
+        return formattedDate + " " + getString(R.string.balance)
     }
 }

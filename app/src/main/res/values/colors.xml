@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="text_color_secondary">#333333</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#CFCF2B</color>
+    <color name="main_blue">#178CE8</color>
+    <color name="track_color">#97CBF4</color>
+    <color name="ripple_color">#4D178CE8</color>
+    <color name="bg_color">#DDDDDD</color>
 </resources>

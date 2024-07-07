@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rekoj134.moneymanagement.presentation.home.MainActivity
 import com.rekoj134.moneymanagement.R
@@ -32,6 +31,7 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             // logic code ben trong thang runnable
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            finish()
         }, 4000)
     }
 }
