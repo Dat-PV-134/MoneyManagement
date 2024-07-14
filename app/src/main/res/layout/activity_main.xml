@@ -9,7 +9,9 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_80sdp"
+        android:clipToPadding="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -196,13 +198,13 @@
                 android:layout_marginTop="@dimen/_12sdp"
                 android:elevation="@dimen/_10sdp"
                 android:progress="60"
-                app:trackThickness="@dimen/_6sdp"
-                app:trackCornerRadius="@dimen/_99sdp"
-                app:trackColor="@color/track_color"
                 app:indicatorColor="@color/main_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvBudgetTitle" />
+                app:layout_constraintTop_toBottomOf="@id/tvBudgetTitle"
+                app:trackColor="@color/track_color"
+                app:trackCornerRadius="@dimen/_99sdp"
+                app:trackThickness="@dimen/_6sdp" />
 
             <TextView
                 android:id="@+id/tvRemainingBudgetTitle"
@@ -240,15 +242,17 @@
                 app:layout_constraintTop_toBottomOf="@id/progressBudget" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTransaction"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/bg_color"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="vertical"
-                tools:itemCount="6"
-                tools:listitem="@layout/item_transaction"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bgBudget"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:spanCount="1"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_transaction" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
