@@ -74,8 +74,8 @@ class HomeTransactionViewHolder(private val binding: ItemTransactionBinding) : V
             binding.tvTotal.isSelected = true
         }
 
-        binding.tvTotal.text = context.getString(R.string.expense) + CurrencyConverter.convertToCurrency(totalExpense) +
-                if (totalIncome != 0.0) ", " + context.getString(R.string.income) + CurrencyConverter.convertToCurrency(totalIncome)
+        binding.tvTotal.text = context.getString(R.string.expense) + "-" + CurrencyConverter.convertToCurrency(totalExpense) +
+                if (totalIncome != 0.0) ", " + context.getString(R.string.income) + "+" + CurrencyConverter.convertToCurrency(totalIncome)
                 else ""
 
         binding.tvDate.text = DateTimeUtil.convertMillisToDateStr(transaction.dateTime)
