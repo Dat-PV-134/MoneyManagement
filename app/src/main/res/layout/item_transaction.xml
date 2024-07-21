@@ -1,48 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="wrap_content">
 
+    <View
+        android:id="@+id/viewMargin"
+        app:layout_constraintTop_toBottomOf="@id/layoutItem"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerAll"
         android:background="#EEEEEE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_marginHorizontal="@dimen/_12sdp"
         android:elevation="@dimen/_4sdp"
-        android:paddingTop="@dimen/_6sdp">
+        android:layout_marginHorizontal="@dimen/_12sdp">
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTop"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:alpha="0.5"
-            android:text="26 Jun 2024"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:paddingVertical="@dimen/_6sdp"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvTotal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6sdp"
-            android:text="Expense: -500,000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:alpha="0.5"
+                android:text="26 Jun 2024"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:text="Expense: -500,000"
+                android:textAlignment="textEnd"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintStart_toEndOf="@id/tvDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_6sdp"
             android:background="@color/white"
             android:paddingVertical="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvDate">
+            app:layout_constraintTop_toBottomOf="@id/layoutTop">
 
             <ImageView
                 android:id="@+id/imgCategory"
@@ -86,4 +108,4 @@
                 android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+</LinearLayout>
