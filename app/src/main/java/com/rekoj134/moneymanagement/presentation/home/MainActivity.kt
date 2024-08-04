@@ -1,6 +1,8 @@
 package com.rekoj134.moneymanagement.presentation.home
 
+import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rekoj134.moneymanagement.R
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CAR
@@ -30,7 +32,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleEvent() {
+        binding.btnAdd.setOnClickListener {
 
+        }
+
+        binding.btnMore.setOnClickListener {
+
+        }
+
+
+        binding.btnChart.setOnClickListener {
+
+        }
+
+        binding.btnCategory.setOnClickListener {
+
+        }
+
+        binding.btnLanguage.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Change language", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnRate.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Rate", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnShareApp.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Share app", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnChangeTheme.setOnClickListener {
+            binding.btnChangeTheme.startAnim {
+                // Tam thoi ko lam gi
+            }
+        }
     }
 
     private fun initData() {

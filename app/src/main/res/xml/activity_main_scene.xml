@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3000">
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+<!--        <Constraint-->
+<!--            android:id="@+id/containerTopView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_100sdp"-->
+<!--            android:visibility="gone"-->
+<!--            motion:layout_constraintStart_toStartOf="parent"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent"-->
+<!--            motion:layout_constraintTop_toTopOf="parent"-->
+<!--            android:background="#FFFFFF"/>-->
+
+<!--        <Constraint-->
+<!--            android:id="@+id/nestedScrollView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:clipToPadding="false"-->
+<!--            android:paddingBottom="@dimen/_80sdp"/>-->
+
+<!--        <Constraint-->
+<!--            android:id="@+id/bottomNav"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_50sdp"-->
+<!--            android:background="@color/white"-->
+<!--            android:elevation="@dimen/_10sdp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2"-->
+<!--            motion:layout_constraintBottom_toBottomOf="parent"/>-->
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+<!--        <Constraint-->
+<!--            android:id="@+id/containerTopView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_100sdp"-->
+<!--            android:visibility="visible"-->
+<!--            motion:layout_constraintStart_toStartOf="parent"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent"-->
+<!--            motion:layout_constraintTop_toTopOf="parent"-->
+<!--            android:background="#FFFFFF"/>-->
+
+<!--        <Constraint-->
+<!--            android:id="@+id/nestedScrollView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:clipToPadding="false"-->
+<!--            motion:layout_constraintTop_toTopOf="parent"-->
+<!--            android:paddingTop="@dimen/_40sdp"-->
+<!--            android:paddingBottom="@dimen/_80sdp"/>-->
+
+<!--        <Constraint-->
+<!--            android:id="@+id/btnAdd"-->
+<!--            android:layout_width="@dimen/_46sdp"-->
+<!--            android:layout_height="@dimen/_46sdp"-->
+<!--            android:layout_margin="@dimen/_20sdp"-->
+<!--            android:background="@drawable/bg_btn_add"-->
+<!--            android:contentDescription="@null"-->
+<!--            android:elevation="@dimen/_10sdp"-->
+<!--            android:padding="@dimen/_14sdp"-->
+<!--            android:src="@drawable/ic_add"-->
+<!--            motion:layout_constraintBottom_toTopOf="@id/bottomNav"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--        <Constraint-->
+<!--            android:id="@+id/bottomNav"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_50sdp"-->
+<!--            android:background="@color/white"-->
+<!--            android:elevation="@dimen/_10sdp"-->
+<!--            android:visibility="gone"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2"-->
+<!--            motion:layout_constraintStart_toStartOf="parent"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent"-->
+<!--            motion:layout_constraintBottom_toBottomOf="parent"/>-->
+    </ConstraintSet>
+</MotionScene>

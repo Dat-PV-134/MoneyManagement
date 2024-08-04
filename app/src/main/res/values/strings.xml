@@ -5,4 +5,7 @@
     <string name="balance">Balance</string>
     <string name="budget">Budget:</string>
     <string name="remaining_budget">Remaining Budget:</string>
+    <string name="change_language">Change language</string>
+    <string name="share">Share App</string>
+    <string name="rate">Rate Us</string>
 </resources>
