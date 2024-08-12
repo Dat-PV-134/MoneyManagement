@@ -1,26 +1,33 @@
 package com.rekoj134.moneymanagement.presentation.home
 
-import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.rekoj134.moneymanagement.R
+import com.rekoj134.moneymanagement.base.BaseActivity
+import com.rekoj134.moneymanagement.constant.DARK_THEME
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CAR
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CLOTHE
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_EAT
+import com.rekoj134.moneymanagement.constant.LIGHT_THEME
 import com.rekoj134.moneymanagement.constant.TYPE_EXPENSE
 import com.rekoj134.moneymanagement.constant.TYPE_INCOME
 import com.rekoj134.moneymanagement.databinding.ActivityMainBinding
 import com.rekoj134.moneymanagement.model.Transaction
+import com.rekoj134.moneymanagement.prefercence.MyPreference
+import com.rekoj134.moneymanagement.util.ThemeUtil
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private val listTransaction by lazy { ArrayList<Transaction>() }
-    private lateinit var transactionAdapter: HomeTransactionAdapter
+    private var transactionAdapter: HomeTransactionAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,8 +70,33 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnChangeTheme.setOnClickListener {
             binding.btnChangeTheme.startAnim {
-                // Tam thoi ko lam gi
+                changeTheme()
             }
+        }
+    }
+
+    private fun changeTheme() {
+        if (MyPreference.read(MyPreference.PREF_THEME, R.style.Theme_LightTheme) == LIGHT_THEME) {
+            MyPreference.write(MyPreference.PREF_THEME, DARK_THEME)
+            setTheme(ThemeUtil.getTheme(this@MainActivity))
+            binding.tvBudgetTitle.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvBudgetValue.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvRemainingBudgetTitle.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvRemainingBudgetValue.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.bgBudget.setBackgroundResource(R.drawable.bg_spash)
+            binding.bgBudget.setBackgroundResource(R.drawable.bg_budget)
+            binding.rvTransaction.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_2))
+            transactionAdapter = null
+        } else {
+            MyPreference.write(MyPreference.PREF_THEME, LIGHT_THEME)
+            setTheme(ThemeUtil.getTheme(this@MainActivity))
+            binding.tvBudgetTitle.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvBudgetValue.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvRemainingBudgetTitle.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvRemainingBudgetValue.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.bgBudget.setBackgroundResource(R.drawable.bg_spash)
+            binding.bgBudget.setBackgroundResource(R.drawable.bg_budget)
+            binding.rvTransaction.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_2))
         }
     }
 
@@ -94,13 +126,21 @@ class MainActivity : AppCompatActivity() {
     private fun setupView() {
         binding.tvTitleTop.text = getTopTitle()
 
+        if (ThemeUtil.getTheme(this@MainActivity) == R.style.Theme_LightTheme) {
+            binding.btnChangeTheme.startAnim {
+
+            }
+        } else {
+            // Do nothing
+        }
+
         binding.rvTransaction.adapter = transactionAdapter
 
         listTransaction.sortWith(compareByDescending {
             it.dateTime
         })
-        transactionAdapter.setListTransaction(listTransaction)
-        transactionAdapter.notifyDataSetChanged()
+        transactionAdapter?.setListTransaction(listTransaction)
+        transactionAdapter?.notifyDataSetChanged()
     }
 
     private fun getTopTitle() : String {

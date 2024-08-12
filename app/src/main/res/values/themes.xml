@@ -5,9 +5,20 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:statusBarColor">@color/main_blue</item>
+        <item name="android:colorControlHighlight">@color/ripple_color</item>
     </style>
 
-    <style name="Theme.MoneyManagement" parent="Base.Theme.MoneyManagement">
-        <item name="android:colorControlHighlight">@color/ripple_color</item>
+    <style name="Theme.DarkTheme" parent="Base.Theme.MoneyManagement">
+        <item name="background_color_1">#1E1E1E</item>
+        <item name="background_color_2">#2B2A2A</item>
+        <item name="background_color_3">#322E2E</item>
+        <item name="text_color_1">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.LightTheme" parent="Base.Theme.MoneyManagement">
+        <item name="background_color_1">#FFFFFF</item>
+        <item name="background_color_2">#DDDDDD</item>
+        <item name="background_color_3">#EEEEEE</item>
+        <item name="text_color_1">#000000</item>
     </style>
 </resources>

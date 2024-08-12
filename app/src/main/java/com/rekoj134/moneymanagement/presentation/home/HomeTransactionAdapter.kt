@@ -17,6 +17,7 @@ import com.rekoj134.moneymanagement.model.Transaction
 import com.rekoj134.moneymanagement.util.CategoryUtil
 import com.rekoj134.moneymanagement.util.CurrencyConverter
 import com.rekoj134.moneymanagement.util.DateTimeUtil
+import com.rekoj134.moneymanagement.util.ThemeUtil
 import java.util.Date
 
 class HomeTransactionAdapter(private val context: Context) : RecyclerView.Adapter<HomeTransactionViewHolder>() {
@@ -26,6 +27,14 @@ class HomeTransactionAdapter(private val context: Context) : RecyclerView.Adapte
     fun setListTransaction(listTransaction: List<Transaction>) {
         this.listTransaction.clear()
         this.listTransaction.addAll(listTransaction)
+    }
+
+    fun refresh() {
+        val tempList = listTransaction.clone() as ArrayList<Transaction>
+        listTransaction.clear()
+        notifyDataSetChanged()
+        listTransaction.addAll(tempList)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeTransactionViewHolder {
