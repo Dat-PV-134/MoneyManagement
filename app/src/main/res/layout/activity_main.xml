@@ -16,8 +16,7 @@
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingBottom="@dimen/_80sdp">
+            android:clipToPadding="false">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -29,9 +28,9 @@
                     android:layout_width="@dimen/_36sdp"
                     android:layout_height="@dimen/_36sdp"
                     android:layout_marginEnd="@dimen/_3sdp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@null"
                     android:padding="@dimen/_6sdp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
                     app:avdFirst="@drawable/avd_anim_change_theme"
                     app:avdSecond="@drawable/avd_anim_change_theme_reverse"
                     app:layout_constraintBottom_toBottomOf="@id/btnMore"
@@ -266,7 +265,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="?attr/background_color_2"
+                    android:clipToPadding="false"
                     android:orientation="vertical"
+                    android:paddingBottom="@dimen/_80sdp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/bgBudget"
@@ -295,7 +296,7 @@
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
-            android:background="@color/white"
+            android:background="?attr/background_color_1"
             android:elevation="@dimen/_10sdp"
             android:orientation="horizontal"
             android:weightSum="2"
@@ -306,20 +307,22 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
+                android:background="@drawable/bg_btn_bottom_nav"
                 android:contentDescription="@null"
                 android:padding="@dimen/_14sdp"
-                android:src="@drawable/ic_category" />
+                android:src="@drawable/ic_category"
+                app:tint="?attr/text_color_1" />
 
             <ImageView
                 android:id="@+id/btnChart"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
+                android:background="@drawable/bg_btn_bottom_nav"
                 android:contentDescription="@null"
                 android:padding="@dimen/_14sdp"
-                android:src="@drawable/ic_chart" />
+                android:src="@drawable/ic_chart"
+                app:tint="?attr/text_color_1" />
         </LinearLayout>
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
@@ -333,7 +336,7 @@
             android:id="@+id/nav_header"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white">
+            android:background="?attr/background_color_1">
 
             <ImageView
                 android:id="@+id/nav_header_imageView"
@@ -362,7 +365,8 @@
                 android:src="@drawable/ic_language"
                 app:layout_constraintBottom_toBottomOf="@id/btnLanguage"
                 app:layout_constraintStart_toStartOf="@id/btnLanguage"
-                app:layout_constraintTop_toTopOf="@id/btnLanguage" />
+                app:layout_constraintTop_toTopOf="@id/btnLanguage"
+                app:tint="?attr/text_color_1" />
 
             <TextView
                 android:id="@+id/tvLanguage"
@@ -371,7 +375,7 @@
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 android:fontFamily="@font/inter_medium"
                 android:text="@string/change_language"
-                android:textColor="@color/black"
+                android:textColor="?attr/text_color_1"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="@id/btnLanguage"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -395,7 +399,8 @@
                 android:src="@drawable/ic_share"
                 app:layout_constraintBottom_toBottomOf="@id/btnShareApp"
                 app:layout_constraintStart_toStartOf="@id/btnShareApp"
-                app:layout_constraintTop_toTopOf="@id/btnShareApp" />
+                app:layout_constraintTop_toTopOf="@id/btnShareApp"
+                app:tint="?attr/text_color_1" />
 
             <TextView
                 android:id="@+id/tvShare"
@@ -404,7 +409,7 @@
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 android:fontFamily="@font/inter_medium"
                 android:text="@string/share"
-                android:textColor="@color/black"
+                android:textColor="?attr/text_color_1"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="@id/btnShareApp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -428,7 +433,8 @@
                 android:src="@drawable/ic_rate"
                 app:layout_constraintBottom_toBottomOf="@id/btnRate"
                 app:layout_constraintStart_toStartOf="@id/btnRate"
-                app:layout_constraintTop_toTopOf="@id/btnRate" />
+                app:layout_constraintTop_toTopOf="@id/btnRate"
+                app:tint="?attr/text_color_1" />
 
             <TextView
                 android:id="@+id/tvRate"
@@ -437,7 +443,7 @@
                 android:layout_marginHorizontal="@dimen/_12sdp"
                 android:fontFamily="@font/inter_medium"
                 android:text="@string/rate"
-                android:textColor="@color/black"
+                android:textColor="?attr/text_color_1"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintBottom_toBottomOf="@id/btnRate"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,7 @@
 package com.rekoj134.moneymanagement.presentation.home
 
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Toast
 import com.rekoj134.moneymanagement.R
 import com.rekoj134.moneymanagement.base.BaseActivity
@@ -40,9 +41,10 @@ class MainActivity : BaseActivity() {
         }
 
         binding.btnMore.setOnClickListener {
-
+            if (!binding.root.isDrawerOpen(Gravity.LEFT)) {
+                binding.root.openDrawer(Gravity.LEFT)
+            }
         }
-
 
         binding.btnChart.setOnClickListener {
 
@@ -83,6 +85,24 @@ class MainActivity : BaseActivity() {
             binding.bgBudget.setBackgroundResource(R.drawable.bg_budget)
             binding.rvTransaction.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_2))
 
+            // Change theme for navigation drawer
+            binding.navHeader.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_1))
+            binding.imgLanguage.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.imgShare.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.imgRate.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvLanguage.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvShare.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvRate.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+
+            // Change theme for bottom nav
+            binding.bottomNav.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_1))
+            binding.btnChart.setBackgroundResource(R.drawable.bg_spash)
+            binding.btnChart.setBackgroundResource(R.drawable.bg_btn_bottom_nav)
+            binding.btnCategory.setBackgroundResource(R.drawable.bg_spash)
+            binding.btnCategory.setBackgroundResource(R.drawable.bg_btn_bottom_nav)
+            binding.btnCategory.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.btnChart.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+
             // Change theme for recycler view
             transactionAdapter?.refreshRecyclerView()
         } else {
@@ -96,9 +116,29 @@ class MainActivity : BaseActivity() {
             binding.bgBudget.setBackgroundResource(R.drawable.bg_budget)
             binding.rvTransaction.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_2))
 
+            // Change theme for navigation drawer
+            binding.navHeader.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_1))
+            binding.imgLanguage.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.imgShare.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.imgRate.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvLanguage.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvShare.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.tvRate.setTextColor(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+
+            // Change theme for bottom nav
+            binding.bottomNav.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_1))
+            binding.btnChart.setBackgroundResource(R.drawable.bg_spash)
+            binding.btnChart.setBackgroundResource(R.drawable.bg_btn_bottom_nav)
+            binding.btnCategory.setBackgroundResource(R.drawable.bg_spash)
+            binding.btnCategory.setBackgroundResource(R.drawable.bg_btn_bottom_nav)
+            binding.btnCategory.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+            binding.btnChart.setColorFilter(ThemeUtil.getResColor(this@MainActivity, R.attr.text_color_1))
+
             // Change theme for recycler view
             transactionAdapter?.refreshRecyclerView()
         }
+
+        // Can change theme by set MyPreference.write(MyPreference.PREF_THEME, LIGHT_THEME) and call recreate() to make things change
     }
 
     private fun initData() {
