@@ -44,7 +44,6 @@ class TranslateAnimationUtil(private val context: Context, private val animViewD
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
-                    isFinishAnimation = true
                 }
 
                 override fun onAnimationRepeat(p0: Animation?) {
@@ -55,9 +54,7 @@ class TranslateAnimationUtil(private val context: Context, private val animViewD
             val animScaleBigOut = AnimationUtils.loadAnimation(animViewDown.context, R.anim.big_out)
             animScaleBigOut.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(p0: Animation?) {
-                    animViewDown.visibility = View.VISIBLE
                     animViewScale.visibility = View.VISIBLE
-                    isFinishAnimation = false
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
@@ -89,8 +86,6 @@ class TranslateAnimationUtil(private val context: Context, private val animViewD
 
                 override fun onAnimationEnd(p0: Animation?) {
                     animViewDown.visibility = View.GONE
-                    animViewScale.visibility = View.GONE
-                    isFinishAnimation = true
                 }
 
                 override fun onAnimationRepeat(p0: Animation?) {
@@ -101,11 +96,10 @@ class TranslateAnimationUtil(private val context: Context, private val animViewD
             val animScaleSmallIn = AnimationUtils.loadAnimation(animViewDown.context, R.anim.small_in)
             animScaleSmallIn.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(p0: Animation?) {
-                    animViewDown.visibility = View.VISIBLE
-                    isFinishAnimation = false
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
+                    animViewScale.visibility = View.GONE
                     isFinishAnimation = true
                 }
 
