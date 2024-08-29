@@ -8,4 +8,8 @@
     <string name="change_language">Change language</string>
     <string name="share">Share App</string>
     <string name="rate">Rate Us</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="note">Note</string>
+    <string name="enter_your_note">Enter your note...</string>
 </resources>

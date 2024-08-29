@@ -1,6 +1,7 @@
 package com.rekoj134.moneymanagement.presentation.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
@@ -16,6 +17,7 @@ import com.rekoj134.moneymanagement.constant.TYPE_INCOME
 import com.rekoj134.moneymanagement.databinding.ActivityMainBinding
 import com.rekoj134.moneymanagement.model.Transaction
 import com.rekoj134.moneymanagement.prefercence.MyPreference
+import com.rekoj134.moneymanagement.presentation.create_new_transaction.CreateNewTransactionActivity
 import com.rekoj134.moneymanagement.util.ThemeUtil
 import com.rekoj134.moneymanagement.util.TranslateAnimationUtil
 import java.text.SimpleDateFormat
@@ -39,7 +41,7 @@ class MainActivity : BaseActivity() {
 
     private fun handleEvent() {
         binding.btnAdd.setOnClickListener {
-
+            startActivity(Intent(this@MainActivity, CreateNewTransactionActivity::class.java))
         }
 
         binding.btnMore.setOnClickListener {
