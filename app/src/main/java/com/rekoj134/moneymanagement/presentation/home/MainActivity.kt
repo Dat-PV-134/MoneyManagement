@@ -82,7 +82,9 @@ class MainActivity : BaseActivity() {
             binding.bgBudget.setBackgroundResource(R.drawable.bg_spash)
             binding.bgBudget.setBackgroundResource(R.drawable.bg_budget)
             binding.rvTransaction.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_2))
-            transactionAdapter = null
+
+            // Change theme for recycler view
+            transactionAdapter?.refreshRecyclerView()
         } else {
             MyPreference.write(MyPreference.PREF_THEME, LIGHT_THEME)
             setTheme(ThemeUtil.getTheme(this@MainActivity))
@@ -93,6 +95,9 @@ class MainActivity : BaseActivity() {
             binding.bgBudget.setBackgroundResource(R.drawable.bg_spash)
             binding.bgBudget.setBackgroundResource(R.drawable.bg_budget)
             binding.rvTransaction.setBackgroundColor(ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_2))
+
+            // Change theme for recycler view
+            transactionAdapter?.refreshRecyclerView()
         }
     }
 

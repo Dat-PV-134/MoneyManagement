@@ -29,12 +29,9 @@ class HomeTransactionAdapter(private val context: Context) : RecyclerView.Adapte
         this.listTransaction.addAll(listTransaction)
     }
 
-    fun refresh() {
-        val tempList = listTransaction.clone() as ArrayList<Transaction>
-        listTransaction.clear()
-        notifyDataSetChanged()
-        listTransaction.addAll(tempList)
-        notifyDataSetChanged()
+    // Notify item range change with payload
+    fun refreshRecyclerView() {
+        notifyItemRangeChanged(0, listTransaction.size, "change_theme")
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeTransactionViewHolder {
@@ -43,8 +40,20 @@ class HomeTransactionAdapter(private val context: Context) : RecyclerView.Adapte
         return HomeTransactionViewHolder(binding)
     }
 
+    override fun onBindViewHolder(
+        holder: HomeTransactionViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+        // if payload == change theme -> not rebind item and only change theme
+        if (payloads.any { it == "change_theme" }) {
+            holder.bindChangeTheme(context)
+        } else super.onBindViewHolder(holder, position, payloads)
+    }
+
     override fun onBindViewHolder(holder: HomeTransactionViewHolder, position: Int) {
         val item = listTransaction[position]
+        Log.e("ANCUTKO", oldDate.toString() + " - " + DateTimeUtil.convertMillisToDate(item.dateTime).toString())
         if (oldDate == null || oldDate != DateTimeUtil.convertMillisToDate(item.dateTime)) {
             oldDate = DateTimeUtil.convertMillisToDate(item.dateTime)
             var curPos = position
@@ -52,7 +61,6 @@ class HomeTransactionAdapter(private val context: Context) : RecyclerView.Adapte
             var totalExpense = 0.0
             var totalIncome = 0.0
             while (curPos < listTransaction.size && !canStop) {
-                Log.e("ANCUTKO", curPos.toString() + " - " + listTransaction.size)
                 if (oldDate != DateTimeUtil.convertMillisToDate(listTransaction[curPos].dateTime)) {
                     canStop = true
                 } else {
@@ -96,5 +104,16 @@ class HomeTransactionViewHolder(private val binding: ItemTransactionBinding) : V
             binding.imgCategory.setImageResource(it)
         }
         binding.imgCategory.backgroundTintList = ColorStateList.valueOf(Color.parseColor(transaction.iconColor))
+    }
+
+    // method to change theme of each view again
+    fun bindChangeTheme(context: Context) {
+        Log.e("ANCUTKO", "COME HERE")
+        binding.tvDate.setTextColor(ThemeUtil.getResColor(context, R.attr.text_color_1))
+        binding.tvTotal.setTextColor(ThemeUtil.getResColor(context, R.attr.text_color_1))
+        binding.tvTransactionName.setTextColor(ThemeUtil.getResColor(context, R.attr.text_color_1))
+        binding.tvMoney.setTextColor(ThemeUtil.getResColor(context, R.attr.text_color_1))
+        binding.containerAll.setBackgroundColor(ThemeUtil.getResColor(context, R.attr.background_color_3))
+        binding.layoutItem.setBackgroundColor(ThemeUtil.getResColor(context, R.attr.background_color_1))
     }
 }
