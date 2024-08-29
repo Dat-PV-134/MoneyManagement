@@ -13,6 +13,7 @@
         <item name="background_color_2">#2B2A2A</item>
         <item name="background_color_3">#322E2E</item>
         <item name="text_color_1">#FFFFFF</item>
+        <item name="android:navigationBarColor">#1E1E1E</item>
     </style>
 
     <style name="Theme.LightTheme" parent="Base.Theme.MoneyManagement">
@@ -20,5 +21,6 @@
         <item name="background_color_2">#DDDDDD</item>
         <item name="background_color_3">#EEEEEE</item>
         <item name="text_color_1">#000000</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
     </style>
 </resources>

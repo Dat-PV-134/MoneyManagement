@@ -105,6 +105,8 @@ class MainActivity : BaseActivity() {
 
             // Change theme for recycler view
             transactionAdapter?.refreshRecyclerView()
+
+            window.navigationBarColor = ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_1)
         } else {
             MyPreference.write(MyPreference.PREF_THEME, LIGHT_THEME)
             setTheme(ThemeUtil.getTheme(this@MainActivity))
@@ -136,6 +138,8 @@ class MainActivity : BaseActivity() {
 
             // Change theme for recycler view
             transactionAdapter?.refreshRecyclerView()
+
+            window.navigationBarColor = ThemeUtil.getResColor(this@MainActivity, R.attr.background_color_1)
         }
 
         // Can change theme by set MyPreference.write(MyPreference.PREF_THEME, LIGHT_THEME) and call recreate() to make things change
