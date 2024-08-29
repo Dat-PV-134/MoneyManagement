@@ -1,5 +1,6 @@
 package com.rekoj134.moneymanagement.presentation.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Toast
@@ -16,6 +17,7 @@ import com.rekoj134.moneymanagement.databinding.ActivityMainBinding
 import com.rekoj134.moneymanagement.model.Transaction
 import com.rekoj134.moneymanagement.prefercence.MyPreference
 import com.rekoj134.moneymanagement.util.ThemeUtil
+import com.rekoj134.moneymanagement.util.TranslateAnimationUtil
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -168,6 +170,7 @@ class MainActivity : BaseActivity() {
         transactionAdapter = HomeTransactionAdapter(this@MainActivity)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setupView() {
         binding.tvTitleTop.text = getTopTitle()
 
@@ -186,6 +189,8 @@ class MainActivity : BaseActivity() {
         })
         transactionAdapter?.setListTransaction(listTransaction)
         transactionAdapter?.notifyDataSetChanged()
+
+        binding.rvTransaction.setOnTouchListener(TranslateAnimationUtil(this@MainActivity, binding.bottomNav, binding.btnAdd))
     }
 
     private fun getTopTitle() : String {
