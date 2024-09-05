@@ -8,9 +8,9 @@ import android.widget.Toast
 import com.rekoj134.moneymanagement.R
 import com.rekoj134.moneymanagement.base.BaseActivity
 import com.rekoj134.moneymanagement.constant.DARK_THEME
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CAR
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CLOTHE
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_EAT
+import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_0
+import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_1
+import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_2
 import com.rekoj134.moneymanagement.constant.LIGHT_THEME
 import com.rekoj134.moneymanagement.constant.TYPE_EXPENSE
 import com.rekoj134.moneymanagement.constant.TYPE_INCOME
@@ -151,23 +151,23 @@ class MainActivity : BaseActivity() {
 
     private fun initData() {
         val time1 = System.currentTimeMillis()
-        listTransaction.add(Transaction(0, "Clothing", 3000000.0, ICON_CATEGORY_CLOTHE, "#33AA7F", time1, "", TYPE_EXPENSE))
-        listTransaction.add(Transaction(1, "Eating", 4000000.0, ICON_CATEGORY_EAT, "#F5CF47", time1, "", TYPE_EXPENSE))
-        listTransaction.add(Transaction(2, "Car", 5000000.0, ICON_CATEGORY_CAR, "#F34D4D", time1, "", TYPE_EXPENSE))
-        listTransaction.add(Transaction(3, "Car", 2000000.0, ICON_CATEGORY_CAR, "#F34D4D", time1, "", TYPE_INCOME))
-        listTransaction.add(Transaction(4, "Car", 5000000.0, ICON_CATEGORY_CAR, "#F34D4D", time1, "", TYPE_EXPENSE))
-        listTransaction.add(Transaction(5, "Car", 6000000.0, ICON_CATEGORY_CAR, "#F34D4D", time1, "", TYPE_INCOME))
+        listTransaction.add(Transaction(0, "Clothing", 3000000.0, ICON_CATEGORY_0, "#33AA7F", time1, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(1, "Eating", 4000000.0, ICON_CATEGORY_2, "#F5CF47", time1, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(2, "Car", 5000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(3, "Car", 2000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_INCOME))
+        listTransaction.add(Transaction(4, "Car", 5000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(5, "Car", 6000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_INCOME))
 
         val time2 = System.currentTimeMillis() - 96400000
-        listTransaction.add(Transaction(6, "Eating", 6000000.0, ICON_CATEGORY_EAT, "#F5CF47", time2, "", TYPE_EXPENSE))
-        listTransaction.add(Transaction(7, "Eating", 7000000.0, ICON_CATEGORY_EAT, "#F5CF47", time2, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(6, "Eating", 6000000.0, ICON_CATEGORY_2, "#F5CF47", time2, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(7, "Eating", 7000000.0, ICON_CATEGORY_2, "#F5CF47", time2, "", TYPE_EXPENSE))
 
         val time3 = System.currentTimeMillis() - 196400000
-        listTransaction.add(Transaction(8, "Eating", 8000000.0, ICON_CATEGORY_EAT, "#F5CF47", time3, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(8, "Eating", 8000000.0, ICON_CATEGORY_2, "#F5CF47", time3, "", TYPE_EXPENSE))
 
         val time4 = System.currentTimeMillis() - 296400000
-        listTransaction.add(Transaction(9, "Car", 9000000.0, ICON_CATEGORY_CAR, "#F34D4D", time4, "", TYPE_EXPENSE))
-        listTransaction.add(Transaction(10, "Car", 6000000.0, ICON_CATEGORY_CAR, "#F34D4D", time1, "", TYPE_INCOME))
+        listTransaction.add(Transaction(9, "Car", 9000000.0, ICON_CATEGORY_1, "#F34D4D", time4, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(10, "Car", 6000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_INCOME))
 
         transactionAdapter = HomeTransactionAdapter(this@MainActivity)
     }

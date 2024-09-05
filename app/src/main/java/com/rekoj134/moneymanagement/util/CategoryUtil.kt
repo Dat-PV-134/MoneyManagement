@@ -1,17 +1,17 @@
 package com.rekoj134.moneymanagement.util
 
 import com.rekoj134.moneymanagement.R
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CAR
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_CLOTHE
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_EAT
+import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_0
+import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_1
+import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_2
 
 object CategoryUtil {
     private val mapCategoryId by lazy { HashMap<Int, Int>() }
 
     init {
-        mapCategoryId[ICON_CATEGORY_CLOTHE] = R.drawable.ic_tshirt
-        mapCategoryId[ICON_CATEGORY_CAR] = R.drawable.ic_car
-        mapCategoryId[ICON_CATEGORY_EAT] = R.drawable.ic_eat
+        mapCategoryId[ICON_CATEGORY_0] = R.drawable.ic_category_1
+        mapCategoryId[ICON_CATEGORY_1] = R.drawable.ic_category_2
+        mapCategoryId[ICON_CATEGORY_2] = R.drawable.ic_category_3
     }
 
     fun getCategoryId(iconKey: Int) : Int? {

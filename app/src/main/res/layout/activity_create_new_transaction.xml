@@ -73,7 +73,7 @@
             android:contentDescription="@null"
             android:elevation="@dimen/_4sdp"
             android:padding="@dimen/_12sdp"
-            android:src="@drawable/ic_eat"
+            android:src="@drawable/ic_category_3"
             app:layout_constraintBottom_toBottomOf="@id/tvExpression"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvTotalValue" />

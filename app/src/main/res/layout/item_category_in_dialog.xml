@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:padding="@dimen/_8sdp"
         android:layout_marginVertical="@dimen/_6sdp"
-        android:src="@drawable/ic_eat"
+        android:src="@drawable/ic_category_3"
         app:layout_constraintBottom_toTopOf="@id/lineBottom"
         app:layout_constraintTop_toTopOf="parent"/>
 

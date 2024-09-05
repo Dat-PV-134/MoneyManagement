@@ -6,6 +6,6 @@ data class Category(
     val id: Int,
     val name: String,
     val icon: Int,
-    val iconColor: Int,
+    val iconColor: String,
     val type: Int = TYPE_EXPENSE
 )
