@@ -11,7 +11,7 @@ import com.rekoj134.moneymanagement.databinding.ItemCategoryInDialogBinding
 import com.rekoj134.moneymanagement.model.Category
 import com.rekoj134.moneymanagement.util.CategoryUtil
 
-class CategoryInDialogAdapter(private val context: Context) :
+class CategoryInDialogAdapter(private val context: Context, private val onClickCategory:(Category) -> Unit) :
     RecyclerView.Adapter<CategoryInDialogViewHolder>() {
 
     private val listCategory by lazy { ArrayList<Category>() }
@@ -32,16 +32,20 @@ class CategoryInDialogAdapter(private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: CategoryInDialogViewHolder, position: Int) {
-        holder.bind(context, listCategory[position], position)
+        holder.bind(context, listCategory[position], position, onClickCategory = onClickCategory)
     }
 }
 
 class CategoryInDialogViewHolder(private val binding: ItemCategoryInDialogBinding) : ViewHolder(binding.root) {
-    fun bind(context: Context, category: Category, position: Int) {
+    fun bind(context: Context, category: Category, position: Int, onClickCategory: (Category) -> Unit) {
         binding.tvCategoryName.text = category.name
         CategoryUtil.getCategoryId(category.icon)?.let {
             binding.imgCategory.setImageResource(it)
         }
         binding.imgCategory.backgroundTintList = ColorStateList.valueOf(Color.parseColor(category.iconColor))
+
+        binding.root.setOnClickListener {
+            onClickCategory.invoke(category)
+        }
     }
 }

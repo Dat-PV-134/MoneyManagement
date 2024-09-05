@@ -49,7 +49,9 @@ class SelectCategoryInDialogFragment : Fragment {
     }
 
     private fun initData() {
-        categoryAdapter = CategoryInDialogAdapter(requireContext())
+        categoryAdapter = CategoryInDialogAdapter(requireContext()) {
+            (requireActivity() as CreateNewTransactionActivity?)?.updateCurCategory(it)
+        }
         categoryAdapter.setListCategory(listOf(
             Category(0, "Clothes 1", ICON_CATEGORY_0, "#6BCEE5"),
             Category(1, "Clothes 2", ICON_CATEGORY_1,"#77C48A"),
