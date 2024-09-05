@@ -1,9 +1,6 @@
-package com.rekoj134.moneymanagement.presentation.home
+package com.rekoj134.moneymanagement.screen.home
 
-import android.app.ProgressDialog.show
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Path
 import android.util.AttributeSet
 import androidx.annotation.DrawableRes
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat

@@ -1,4 +1,4 @@
-package com.rekoj134.moneymanagement.presentation.home
+package com.rekoj134.moneymanagement.screen.home
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -17,7 +17,7 @@ import com.rekoj134.moneymanagement.constant.TYPE_INCOME
 import com.rekoj134.moneymanagement.databinding.ActivityMainBinding
 import com.rekoj134.moneymanagement.model.Transaction
 import com.rekoj134.moneymanagement.prefercence.MyPreference
-import com.rekoj134.moneymanagement.presentation.create_new_transaction.CreateNewTransactionActivity
+import com.rekoj134.moneymanagement.screen.create_new_transaction.CreateNewTransactionActivity
 import com.rekoj134.moneymanagement.util.ThemeUtil
 import com.rekoj134.moneymanagement.util.TranslateAnimationUtil
 import java.text.SimpleDateFormat

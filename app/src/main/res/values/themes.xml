@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MoneyManagement" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.Theme.MoneyManagement" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
@@ -26,5 +26,11 @@
         <item name="text_color_2">#575757</item>
         <item name="icon_color_1">#7C7C7C</item>
         <item name="android:navigationBarColor">#FFFFFF</item>
+    </style>
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 </resources>

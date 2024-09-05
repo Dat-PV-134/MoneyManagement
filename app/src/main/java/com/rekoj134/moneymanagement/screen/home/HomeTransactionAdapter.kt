@@ -1,4 +1,4 @@
-package com.rekoj134.moneymanagement.presentation.home
+package com.rekoj134.moneymanagement.screen.home
 
 import android.annotation.SuppressLint
 import android.content.Context

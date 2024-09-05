@@ -1,11 +1,11 @@
-package com.rekoj134.moneymanagement.presentation.splash
+package com.rekoj134.moneymanagement.screen.splash
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.rekoj134.moneymanagement.presentation.home.MainActivity
+import com.rekoj134.moneymanagement.screen.home.MainActivity
 import com.rekoj134.moneymanagement.R
 
 class SplashActivity : AppCompatActivity() {

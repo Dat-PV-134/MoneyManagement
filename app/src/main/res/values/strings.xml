@@ -12,4 +12,6 @@
     <string name="time">Time</string>
     <string name="note">Note</string>
     <string name="enter_your_note">Enter your note...</string>
+    <string name="expense_title">Expense</string>
+    <string name="income_title">Income</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background_color_1"
-    tools:context=".presentation.create_new_transaction.CreateNewTransactionActivity">
+    tools:context=".screen.create_new_transaction.CreateNewTransactionActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutTop"
@@ -156,4 +156,20 @@
             android:textColorHint="?attr/text_color_2"
             android:textSize="@dimen/_14ssp" />
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        app:layout_constraintTop_toTopOf="@id/btnTime"
+        android:layout_height="1dp"
+        android:elevation="@dimen/_4sdp"
+        android:background="#D8D8D8"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="@id/btnTime"
+        android:layout_height="1dp"
+        android:elevation="@dimen/_4sdp"
+        android:background="#D8D8D8"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

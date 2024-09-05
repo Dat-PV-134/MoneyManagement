@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_color"
-        tools:context=".presentation.home.MainActivity">
+        tools:context=".screen.home.MainActivity">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/main_blue">
 
-                <com.rekoj134.moneymanagement.presentation.home.ReverseAnimatedVectorDrawableImageView
+                <com.rekoj134.moneymanagement.screen.home.ReverseAnimatedVectorDrawableImageView
                     android:id="@+id/btnChangeTheme"
                     android:layout_width="@dimen/_36sdp"
                     android:layout_height="@dimen/_36sdp"
