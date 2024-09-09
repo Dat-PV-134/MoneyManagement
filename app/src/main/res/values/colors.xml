@@ -8,4 +8,5 @@
     <color name="track_color">#97CBF4</color>
     <color name="ripple_color">#4D178CE8</color>
     <color name="bg_color">#DDDDDD</color>
+    <color name="test_color">#E86868</color>
 </resources>

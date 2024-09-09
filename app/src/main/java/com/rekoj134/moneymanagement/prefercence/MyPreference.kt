@@ -7,6 +7,7 @@ object MyPreference {
     private lateinit var prefs: SharedPreferences
     private const val PREFS_NAME = "shared_preferences"
     const val PREF_THEME = "pref_theme"
+    const val PREF_FIRST_SETUP_DATABASE = "pref_first_setup_database"
 
     fun init(context: Context) {
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -44,6 +45,18 @@ object MyPreference {
         val prefsEditor: SharedPreferences.Editor = prefs.edit()
         with(prefsEditor) {
             putLong(key, value)
+            commit()
+        }
+    }
+
+    fun read(key: String, value: Boolean): Boolean {
+        return prefs.getBoolean(key, value)
+    }
+
+    fun write(key: String, value: Boolean) {
+        val prefsEditor: SharedPreferences.Editor = prefs.edit()
+        with(prefsEditor) {
+            putBoolean(key, value)
             commit()
         }
     }

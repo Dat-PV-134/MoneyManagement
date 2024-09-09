@@ -10,8 +10,16 @@ import com.rekoj134.moneymanagement.R
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_0
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_1
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_2
+import com.rekoj134.moneymanagement.constant.TYPE_EXPENSE
+import com.rekoj134.moneymanagement.constant.TYPE_INCOME
 import com.rekoj134.moneymanagement.databinding.FragmentSelectCategoryInDialogBinding
+import com.rekoj134.moneymanagement.db.MyDatabase
+import com.rekoj134.moneymanagement.db.repository.CategoryRepository
 import com.rekoj134.moneymanagement.model.Category
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class SelectCategoryInDialogFragment : Fragment {
     private var _binding: FragmentSelectCategoryInDialogBinding? = null
@@ -20,6 +28,7 @@ class SelectCategoryInDialogFragment : Fragment {
     private var isExpense: Boolean = true
 
     private lateinit var categoryAdapter: CategoryInDialogAdapter
+    private val listCategory by lazy { ArrayList<Category>() }
 
     constructor(): super()
 
@@ -52,12 +61,16 @@ class SelectCategoryInDialogFragment : Fragment {
         categoryAdapter = CategoryInDialogAdapter(requireContext()) {
             (requireActivity() as CreateNewTransactionActivity?)?.updateCurCategory(it)
         }
-        categoryAdapter.setListCategory(listOf(
-            Category(0, "Clothes 1", ICON_CATEGORY_0, "#6BCEE5"),
-            Category(1, "Clothes 2", ICON_CATEGORY_1,"#77C48A"),
-            Category(2, "Clothes 3", ICON_CATEGORY_2, "#EE9ADD"),
-        ))
-        binding?.rvCategory?.adapter = categoryAdapter
+        CoroutineScope(Dispatchers.IO).launch {
+            val categoryRepository = CategoryRepository(MyDatabase.getInstance(requireContext()).categoryDao())
+            categoryRepository.getCategoryByType(if (isExpense) TYPE_EXPENSE else TYPE_INCOME).let {
+                listCategory.addAll(it)
+            }
+            CoroutineScope(Dispatchers.Main).launch {
+                categoryAdapter.setListCategory(listCategory)
+                binding?.rvCategory?.adapter = categoryAdapter
+            }
+        }
     }
 
     private fun setupView() {
