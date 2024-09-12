@@ -8,7 +8,6 @@ import android.widget.Toast
 import com.rekoj134.moneymanagement.R
 import com.rekoj134.moneymanagement.base.BaseActivity
 import com.rekoj134.moneymanagement.constant.DARK_THEME
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_0
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_1
 import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_2
 import com.rekoj134.moneymanagement.constant.LIGHT_THEME
@@ -151,7 +150,7 @@ class MainActivity : BaseActivity() {
 
     private fun initData() {
         val time1 = System.currentTimeMillis()
-        listTransaction.add(Transaction(0, "Clothing", 3000000.0, ICON_CATEGORY_0, "#33AA7F", time1, "", TYPE_EXPENSE))
+        listTransaction.add(Transaction(0, "Clothing", 3000000.0, ICON_CATEGORY_1, "#33AA7F", time1, "", TYPE_EXPENSE))
         listTransaction.add(Transaction(1, "Eating", 4000000.0, ICON_CATEGORY_2, "#F5CF47", time1, "", TYPE_EXPENSE))
         listTransaction.add(Transaction(2, "Car", 5000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_EXPENSE))
         listTransaction.add(Transaction(3, "Car", 2000000.0, ICON_CATEGORY_1, "#F34D4D", time1, "", TYPE_INCOME))

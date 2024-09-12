@@ -1,15 +1,10 @@
 package com.rekoj134.moneymanagement.screen.create_new_transaction
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.rekoj134.moneymanagement.R
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_0
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_1
-import com.rekoj134.moneymanagement.constant.ICON_CATEGORY_2
 import com.rekoj134.moneymanagement.constant.TYPE_EXPENSE
 import com.rekoj134.moneymanagement.constant.TYPE_INCOME
 import com.rekoj134.moneymanagement.databinding.FragmentSelectCategoryInDialogBinding
